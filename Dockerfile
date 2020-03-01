@@ -1,11 +1,12 @@
 FROM        alpine:3.11 AS base
-#RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.11/main" > /etc/apk/repositories
-#RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.11/community" >> /etc/apk/repositories
+RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.11/main" > /etc/apk/repositories
+RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.11/community" >> /etc/apk/repositories
 RUN     apk  add --no-cache --update libgcc libstdc++ ca-certificates libcrypto1.1 libssl1.1 libgomp expat git
 
 
 FROM        base AS build
 
+ARG     PREFIX=/opt/ffmpeg
 ENV     OPENJPEG_VERSION=2.1.2
 
 RUN     buildDeps="autoconf \
