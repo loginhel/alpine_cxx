@@ -1,10 +1,10 @@
-FROM        alpine:3.11 
+FROM        alpine:3.12 
 
 MAINTAINER  hhp <hanxiaohui93@163.com>
 
 # 国内镜像
-RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.11/main" > /etc/apk/repositories
-RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.11/community" >> /etc/apk/repositories
+RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.12/main" > /etc/apk/repositories
+RUN echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.12/community" >> /etc/apk/repositories
 
 
 RUN     apk  add --no-cache --update libgcc libstdc++ ca-certificates libcrypto1.1 libssl1.1 libgomp expat git
